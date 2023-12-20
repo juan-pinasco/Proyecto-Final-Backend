@@ -1,0 +1,17 @@
+<a href="http://localhost:8080/api/homeProfile"><button>Volver</button></a>
+<hr />
+<h1>Lista de Usuarios</h1>
+<ul>
+  {{#each users}}
+    <li>
+      <h2>{{this.username}}</h2>
+      <a href="http://localhost:8080/api/users/{{_id}}"><button>Ver detalles</button></a>
+      <br />
+      <br />
+      <form action="/api/users/{{_id}}?_method=DELETE" method="POST">
+        <input type="hidden" name="_method" value="DELETE" />
+        <button type="submit"> Borrar</button>
+      </form>
+    </li>
+  {{/each}}
+</ul>

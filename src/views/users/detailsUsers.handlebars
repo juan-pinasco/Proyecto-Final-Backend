@@ -1,0 +1,63 @@
+<a href="http://localhost:8080/api/users/"><button>Volver</button></a>
+<hr />
+
+<ul>
+  <h1>{{user.username}}</h1>
+  <p><b>Email: </b>{{user.email}}</p>
+  <p><b>Roles: </b><ul>
+      {{#each user.roles}}
+        <li>{{name}}</li>
+      {{/each}}
+    </ul></p>
+  <p><b>Fecha de creacion: </b>{{user.createdAt}}</p>
+</ul>
+
+<div>
+  <h2>Actualizar Producto</h2>
+  <form action="/api/users/{{user._id}}?_method=PUT" method="POST">
+    <input type="hidden" name="_method" value="PUT" />
+    Username:
+    <input
+      type="text"
+      name="username"
+      id="username"
+      placeholder="{{user.username}}"
+      value="{{user.username}}"
+    />
+    Email:
+    <input
+      type="text"
+      name="email"
+      id="email"
+      placeholder="{{user.email}}"
+      value="{{user.email}}"
+    />
+    <br />
+    {{!--     Roles:
+    <fieldset>
+    <input type="checkbox" name="roles" value="user" {{#if (arrayIncludes user.roles 'user')}} checked {{/if}} />
+    user
+    <br />
+    <input type="checkbox" name="roles" value="premium" {{#if (arrayIncludes user.roles 'premium')}} checked {{/if}} />
+    premium
+    <br />
+    <input type="checkbox" name="roles" value="admin" {{#if (arrayIncludes user.roles 'admin')}} checked {{/if}} />
+    admin
+    <br />
+  </fieldset> --}}
+    {{!-- <fieldset>
+      <input type="checkbox" value="{{user.roles.name}}" />
+      user
+      <br />
+      <input type="checkbox" value="{{user.roles.name}}" />
+      premium
+      <br />
+      <input type="checkbox" value="{{user.roles.name}}" />
+      admin
+      <br />
+    </fieldset> --}}
+    <br />
+    <br />
+    <input type="submit" value="ACTUALIZAR" />
+  </form>
+</div>

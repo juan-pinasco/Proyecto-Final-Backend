@@ -1,0 +1,32 @@
+<a href="http://localhost:8080/api/homeProfile"><button>Volver</button></a>
+<hr />
+
+<div>
+  <h1>Crear Productos</h1>
+
+  <form action="/api/products/postProducts" method="POST">
+
+    <label>Title</label>
+    <input type="text" name="title" id="title" />
+
+    <label>Description</label>
+    <input name="description" />
+
+    <label>Price</label>
+    <input name="price" />
+
+    <label>Stock</label>
+    <input name="stock" />
+
+    <label>Code</label>
+    <input name="code" />
+
+    <label>Category</label>
+    <input name="category" />
+
+    <br />
+    <br />
+    <input type="submit" value="Crear Producto" />
+
+  </form>
+</div>
